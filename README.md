@@ -19,18 +19,16 @@ The tool supports:
 - Optional **domain code → description** mapping
 - Optional **field alias** output
 - **Single-sheet** or **multi-sheet grouped** Excel export
-- **Automatic column width** adjustment
-- **Freeze header row** option
-- **TOC (Table of Contents)** sheet creation
-- Full compatibility with **ArcGIS Pro script tools**
+- Automatic column width adjustment
+- Freeze header row option
+- TOC (Table of Contents) sheet creation
+- Full compatibility with ArcGIS Pro script tools
 
-The goal of this project is to refactor a previously very large monolithic script into a clean, maintainable, modular Python package suitable for sharing and reuse.
+
 
 ---
 
-# 🔧 High-Level Workflow
-
-The diagram below explains the tool’s end-to-end logic.
+Workflow
 
 ```mermaid
 flowchart TD

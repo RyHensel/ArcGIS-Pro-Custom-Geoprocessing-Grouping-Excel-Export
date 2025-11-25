@@ -15,10 +15,10 @@ This project contains a multi-file Python implementation of an advanced ArcGIS P
 
 The tool supports:
 
-- Exporting **all fields** or a **custom field list**
-- Optional **domain code → description** mapping
-- Optional **field alias** output
-- **Single-sheet** or **multi-sheet grouped** Excel export
+- Exporting all fields or a custom field list
+- Optional domain code → description** mapping
+- Optional field alias output
+- Single-sheet or multi-sheet grouped Excel export
 - Automatic column width adjustment
 - Freeze header row option
 - TOC (Table of Contents) sheet creation

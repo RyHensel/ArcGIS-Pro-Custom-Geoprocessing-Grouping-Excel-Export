@@ -30,37 +30,36 @@ The tool supports:
 
 Workflow
 
-```mermaid
 flowchart TD
     A[Start: GP tool runs] --> B[Read tool parameters]
-    B --> C[Resolve input layer & field lists]
-    C --> D[Detect selection and read features into DataFrame]
+    B --> C[Resolve input layer and field lists]
+    C --> D[Read features into DataFrame]
     D --> E{Use coded domain descriptions?}
 
-    E -->|Yes| F[Get domain mappings<br/>(GDB or service)]
-    F --> G[Apply domain mappings<br/>codes → descriptions]
+    E -->|Yes| F[Get domain mappings from GDB or service]
+    F --> G[Apply domain descriptions]
     E -->|No| H[Skip domain mapping]
 
-    G --> I[Clean column headers<br/>(aliases or raw names)]
-    H --> I[Clean column headers<br/>(aliases or raw names)]
+    G --> I[Clean column headers]
+    H --> I[Clean column headers]
 
-    I --> J[Ensure group-by column exists<br/>and is normalized]
+    I --> J[Normalize group-by column]
 
     J --> K{Export mode?}
-    K -->|single_sheet| L[Sort DataFrame<br/>by group and other fields]
-    L --> M[Write single 'Data' sheet]
+    K -->|single_sheet| L[Sort DataFrame]
+    L --> M[Write single Data sheet]
 
-    K -->|sheets| N[Group DataFrame by group-by field]
-    N --> O[For each group:<br/>build safe, unique sheet name<br/>and write sheet]
+    K -->|sheets| N[Group DataFrame]
+    N --> O[Write one sheet per group]
 
     M --> P{TOC enabled?}
     O --> P{TOC enabled?}
 
-    P -->|Yes| Q[Build TOC sheet<br/>with sheet names & counts]
+    P -->|Yes| Q[Build TOC sheet]
     P -->|No| R[Skip TOC]
 
-    Q --> S[Apply formatting<br/>(auto-width, freeze header)]
-    R --> S[Apply formatting<br/>(auto-width, freeze header)]
+    Q --> S[Apply formatting]
+    R --> S[Apply formatting]
 
-    S --> T[Set Excel path as output<br/>and log success]
+    S --> T[Set output path]
     T --> U[End]

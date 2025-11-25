@@ -26,40 +26,41 @@ The tool supports:
 
 
 
----
-
-Workflow
-
+```mermaid
 flowchart TD
-    A[Start: GP tool runs] --> B[Read tool parameters]
-    B --> C[Resolve input layer and field lists]
-    C --> D[Read features into DataFrame]
-    D --> E{Use coded domain descriptions?}
 
-    E -->|Yes| F[Get domain mappings from GDB or service]
-    F --> G[Apply domain descriptions]
-    E -->|No| H[Skip domain mapping]
+    A["Start: GP tool runs"] --> B["Read tool parameters"]
+    B --> C["Resolve input layer and field lists"]
+    C --> D["Read features into DataFrame"]
 
-    G --> I[Clean column headers]
-    H --> I[Clean column headers]
+    D --> E{"Use coded domain descriptions?"}
 
-    I --> J[Normalize group-by column]
+    E -->|Yes| F["Get domain mappings from GDB or service"]
+    F --> G["Apply domain descriptions"]
+    E -->|No| H["Skip domain mapping"]
 
-    J --> K{Export mode?}
-    K -->|single_sheet| L[Sort DataFrame]
-    L --> M[Write single Data sheet]
+    G --> I["Clean column headers"]
+    H --> I["Clean column headers"]
 
-    K -->|sheets| N[Group DataFrame]
-    N --> O[Write one sheet per group]
+    I --> J["Normalize group-by column"]
 
-    M --> P{TOC enabled?}
-    O --> P{TOC enabled?}
+    J --> K{"Export mode?"}
 
-    P -->|Yes| Q[Build TOC sheet]
-    P -->|No| R[Skip TOC]
+    K -->|single_sheet| L["Sort DataFrame"]
+    L --> M["Write single 'Data' sheet"]
 
-    Q --> S[Apply formatting]
-    R --> S[Apply formatting]
+    K -->|sheets| N["Group DataFrame"]
+    N --> O["Write one sheet per group"]
 
-    S --> T[Set output path]
-    T --> U[End]
+    M --> P{"TOC enabled?"}
+    O --> P{"TOC enabled?"}
+
+    P -->|Yes| Q["Build TOC sheet"]
+    P -->|No| R["Skip TOC"]
+
+    Q --> S["Apply formatting"]
+    R --> S["Apply formatting"]
+
+    S --> T["Set output path"]
+    T --> U["End"]
+```

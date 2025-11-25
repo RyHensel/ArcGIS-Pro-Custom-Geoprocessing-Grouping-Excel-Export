@@ -62,5 +62,6 @@ flowchart TD
     R --> S["Apply formatting"]
 
     S --> T["Set output path"]
-    T --> U["End"]
+    T --> U["Set output path and finalize Excel writer"]
+    U --> V["Write Excel file to disk with pandas/openpyxl"]
 ```

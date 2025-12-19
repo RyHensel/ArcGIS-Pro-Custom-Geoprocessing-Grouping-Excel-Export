@@ -19,6 +19,7 @@ The tool supports:
 - TOC (Table of Contents) sheet creation
 - Full compatibility with ArcGIS Pro script tools
 
+<img width="582" height="778" alt="image" src="https://github.com/user-attachments/assets/97f8b21f-38ca-45fc-a326-1ae6069702df" />
 
 
 ```mermaid

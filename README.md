@@ -59,3 +59,17 @@ flowchart TD
     T --> U["Set output path and finalize Excel writer"]
     U --> V["Write Excel file to disk with pandas/openpyxl"]
 ```
+Keywords:
+ArcGIS Pro
+
+arcpy
+
+Excel export
+
+geoprocessing tool
+
+field aliases
+
+domain descriptions
+
+grouping data

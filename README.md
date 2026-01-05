@@ -4,7 +4,9 @@ A custom geoprocessing tool for ArcGIS Pro that has options for grouping data wh
 This repository contains:
 
 - Geoprocessing Tool Grouping Excel Export.atbx — the ArcGIS Pro toolbox, with Python embedded
-- Grouping Excel Export Tool Sample Data.zip — optional file geodatabase for testing
+- Grouping Excel Export Tool Sample Data.gdb.zip — optional file geodatabase for testing
+      --! NOTE: Windows seems to error when unzipping the .zip file containing this sample data .gdb.
+      --! YOU MUST cut and paste it somewhere outside the downloaded repository file and then unzip it for it to work.
 - Grouping_Excel_Output.xlsx - example file - output result from this tool
 
 

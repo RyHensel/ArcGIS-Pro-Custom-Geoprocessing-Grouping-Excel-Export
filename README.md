@@ -63,6 +63,19 @@ flowchart TD
     T --> U["Set output path and finalize Excel writer"]
     U --> V["Write Excel file to disk with pandas/openpyxl"]
 ```
+
+## Version History
+
+### v1.1.0
+- Fixed an issue where the **Domain Descriptions instead of Codes** option only worked for text-based domain fields.  
+  Numeric coded-value domains are now handled correctly.
+- Updated schema detection to use the **map feature layer** rather than the underlying geodatabase feature class, ensuring exported Excel files respect field order and field aliases.
+- Improved formatting and clarity of ArcGIS Pro tool messages shown during execution.
+
+### v1.0.0
+- Initial public release
+
+
 Keywords:
 ArcGIS Pro
 

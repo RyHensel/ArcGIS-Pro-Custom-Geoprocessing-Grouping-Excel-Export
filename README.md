@@ -65,14 +65,17 @@ flowchart TD
 ```
 
 ## Version History
+### v1.4
+Field alias resolution now mirrors ArcGIS Pro’s native Excel export behavior. The tool prefers layer‑level CIM aliases when present, falls back to geodatabase aliases when the layer has not persisted field settings yet, and uses raw field names only when no alias exists. This prevents “silent” alias loss for untouched layers added directly from a .gdb.
+Added small robustness fixes: selection detection now tolerates layers without FIDSet, and Table of Contents hyperlink targets safely handle sheet names containing apostrophes.
 
-### v1.1.0
+### v1.3
 - Fixed an issue where the **Domain Descriptions instead of Codes** option only worked for text-based domain fields.  
   Numeric coded-value domains are now handled correctly.
 - Updated schema detection to use the **map feature layer** rather than the underlying geodatabase feature class, ensuring exported Excel files respect field order and field aliases.
 - Improved formatting and clarity of ArcGIS Pro tool messages shown during execution.
 
-### v1.0.0
+### v1.0
 - Initial public release
 
 

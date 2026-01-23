@@ -4,9 +4,9 @@
 This repository contains:
 
 - Geoprocessing Tool Grouping Excel Export.atbx — the ArcGIS Pro toolbox, with Python embedded
-- Grouping Excel Export Tool Sample Data.gdb.zip — optional file geodatabase for testing
-      --! NOTE: Windows seems to error when unzipping the .zip file containing this sample data .gdb.
-      --! YOU MUST cut and paste it somewhere outside the downloaded repository file and then unzip it for it to work.
+- Grouping Excel Export Tool Sample Data.gdb.zip — optional file geodatabase for testing  
+  **Note:** Windows may error when unzipping the `.gdb` inside the repository.  
+  Extract the zip to a location outside the downloaded repository folder before use.
 - Grouping_Excel_Output.xlsx - example file - output result from this tool
 
 
@@ -61,7 +61,7 @@ With this tool:
 ## Tool Capabilities:
 
 - Exporting all fields or a custom field list
-- Optional domain code → description** mapping
+- Optional domain code → description mapping
 - Optional field alias output
 - Single-sheet or multi-sheet grouped Excel export
 - Automatic column width adjustment

@@ -9,6 +9,23 @@ This repository contains:
   Extract the zip to a location outside the downloaded repository folder before use.
 - Grouping_Excel_Output.xlsx - example file - output result from this tool
 
+## Installation
+No installation or Python configuration is required.
+This tool is distributed as an ArcGIS Pro toolbox (`.atbx`) with embedded Python.
+1. Download this repository as a `.zip` file (or download the `.atbx` file only).
+2. Unzip the downloaded files to a local folder.
+3. In **ArcGIS Pro**, open your project (`.aprx`).
+4. In the **Catalog** pane:
+   - Right-click **Toolboxes**
+   - Choose **Add Toolbox**
+   - Browse to and select `Grouping Excel Export.atbx`
+
+The tool will now appear in your project and can be run like any other geoprocessing tool.
+
+### Notes
+
+- Only the `.atbx` file is required to run the tool.
+- The sample geodatabase and example Excel file are provided for testing and reference only.
 
 ## Why this tool exists
 

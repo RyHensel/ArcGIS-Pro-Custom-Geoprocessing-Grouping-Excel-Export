@@ -1,5 +1,5 @@
 # ArcGIS-Pro-Custom-Geoprocessing-Grouping-Excel-Export
-A custom geoprocessing tool for ArcGIS Pro that has options for grouping data when exported to an Excel document.
+### Export ArcGIS Pro feature layers to grouped, multi-sheet Excel workbooks
 
 This repository contains:
 
@@ -10,7 +10,55 @@ This repository contains:
 - Grouping_Excel_Output.xlsx - example file - output result from this tool
 
 
-The tool supports:
+## Why this tool exists
+
+ArcGIS Pro’s built-in **Export To Excel** tool produces flat tables.
+That works well until your data contains **one-to-many relationships** and you need the output to be **grouped in a meaningful way**.
+
+This tool is designed for cases where rows naturally belong to a parent:
+- Meters grouped by transformer
+- Trees grouped by management area
+- Samples grouped by building or room
+- Assets grouped by project, site, or inspection batch
+
+Instead of manually sorting and splitting Excel files after export,
+this tool generates **clean, structured Excel workbooks automatically**.
+
+## Conceptual example
+
+Below is a simplified example of how the tool transforms data during export.
+
+**Input: ArcGIS attribute table (group field highlighted)**  
+<img width="759.75" height="187" alt="image" src="https://github.com/user-attachments/assets/08d754a2-79c2-4431-a6c0-1ae70a2b1af3" />
+
+
+
+⬇️ **Export grouped by field**
+
+**Output: Excel workbook**  
+- One worksheet per group value  
+- Optional Table of Contents sheet
+
+<img width="750" height="330" alt="image" src="https://github.com/user-attachments/assets/99b2bb34-6f2d-4042-902e-a5f03ab017d3" />
+
+## Real-world use case
+
+In an electric utility GIS, meters are connected to transformers.
+When exporting meter data for reporting or review, it is often necessary to group meters by transformer.
+
+Without this tool:
+- Export a flat table
+- Sort and filter manually
+- Copy rows into separate sheets
+- Repeat for each transformer
+
+With this tool:
+- Choose the transformer ID as the group field
+- Automatically create one Excel worksheet per transformer
+- Preserve field aliases and domain descriptions
+
+
+## Tool Capabilities:
 
 - Exporting all fields or a custom field list
 - Optional domain code → description** mapping
@@ -23,7 +71,7 @@ The tool supports:
 
 <img width="582" height="778" alt="image" src="https://github.com/user-attachments/assets/97f8b21f-38ca-45fc-a326-1ae6069702df" />
 
-
+## Internal processing overview
 ```mermaid
 flowchart TD
 
@@ -63,6 +111,14 @@ flowchart TD
     T --> U["Set output path and finalize Excel writer"]
     U --> V["Write Excel file to disk with pandas/openpyxl"]
 ```
+
+## This tool is especially useful if:
+
+- Your data has a logical parent-child relationship
+- You frequently reorganize Excel exports after the fact
+- Field aliases and domain descriptions matter in reports
+- You want structured Excel outputs with minimal post-processing
+
 
 ## Version History
 ### v1.4
